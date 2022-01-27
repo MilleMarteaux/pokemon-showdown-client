@@ -179,16 +179,9 @@ const Dex = new class implements ModdedDex {
 
 	pokeballs: string[] | null = null;
 
-	resourcePrefix = (() => {
-		let prefix = '';
-		if (window.document?.location?.protocol !== 'http:') prefix = 'https:';
-		return `https://raw.githubusercontent.com/MilleMarteaux/thpp-showdown-sprites/main/`;
-	})();
-
-	fxPrefix = (() => {
-		const protocol = (window.document?.location?.protocol !== 'http:') ? 'https:' : '';
-		return `${protocol}//${window.Config ? Config.routes.client : 'play.pokemonshowdown.com'}/fx/`;
-	})();
+	resourcePrefix = "https://raw.githubusercontent.com/MilleMarteaux/thpp-showdown-sprites/main/";
+	
+	fxPrefix = "https://raw.githubusercontent.com/MilleMarteaux/thpp-showdown-sprites/main/";
 
 	loadedSpriteData = {xy: 1, bw: 0};
 	moddedDexes: {[mod: string]: ModdedDex} = {};
